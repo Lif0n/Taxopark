@@ -1,0 +1,69 @@
+﻿@{
+    ViewData["Title"] = "Orders";
+}
+@model Taxopark.ViewModels.OrderViewModel
+
+<link rel="stylesheet" href="~/css/site.css" />
+<div class="col">
+    <div class="card col">
+        <div class="card-header">
+                <h4>Заказы</h4>
+
+        </div>
+        <div class="card-body">
+            <table class="table table-bordered table-hover table-striped">
+                <thead>
+                    <tr>
+                        <td>ID</td>
+                        <td>ClientName</td>
+                        <td>ClientPhonenumber</td>
+                        <td>ClientStatus</td>
+                        <td>OrderType</td>
+                        <td>Transport</td>
+                        <td>DriverName</td>
+                        <td>DriverSurname</td>
+                        <td>DriverPhone</td>
+                        <td>From</td>
+                        <td>To</td>
+                        <td>Price</td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <form method="get">
+                        @foreach (var item in Model.Orders)
+                        {
+                        <tr>
+                            <td>@item.Id</td>
+                            <td>@item.ClientName</td>
+                            <td>@item.ClientPhonenumber</td>
+                            <td>@item.OrderStatus</td>
+                            <td>@item.OrderType.Name</td>
+                            <td>@item.Transport.Mark</td>
+                            <td>@item.Transport.Driver.Name</td>
+                            <td>@item.Transport.Driver.Surname</td>
+                            <td>@item.Transport.Driver.Phonenumber</td>
+                            <td>@item.From</td>
+                            <td>@item.To</td>
+                            <td>@item.Price</td>
+                        </tr>
+                        }
+                    </form>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="card col">
+        <div class="card-header">
+            <h4>Добавление нового заказа</h4>
+        </div>
+        <div class="card-body m-3">
+            <div class="row">
+                <input type="text" class="form-control col" placeholder="ФИО клиента"/>
+                <input type="text" class="form-control col" placeholder="Номер клиента" />
+            </div>
+            <div class="row">
+                <select name="car" asp-items="Model.Cars" class="form-control col"></select>
+            </div>
+        </div>
+    </div>
+</div>

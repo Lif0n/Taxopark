@@ -6,10 +6,10 @@ namespace Taxopark
 {
     public class MainContext : DbContext
     {
-        //        private readonly string _connectionString = "Data Source=192.168.227.12; initial Catalog=TaxoparkBesSen;" +
-        //"User ID=user04;Password=04;TrustServerCertificate=True";
-        private readonly string _connectionString = "Data Source=DESKTOP-29PRVP2; initial Catalog=Taxopark; " +
-            "Integrated Security=True;TrustServerCertificate=True";
+               private readonly string _connectionString = "Data Source=192.168.227.12; initial Catalog=TaxoparkBesSen;" +
+        "User ID=user04;Password=04;TrustServerCertificate=True";
+/*        private readonly string _connectionString = "Data Source=DESKTOP-29PRVP2; initial Catalog=Taxopark; " +
+            "Integrated Security=True;TrustServerCertificate=True";*/
         public DbSet<Transport> Transports { get; set; }
         public DbSet<OrderType> OrderTypes { get; set; }
         public DbSet<Driver> Drivers { get; set; }

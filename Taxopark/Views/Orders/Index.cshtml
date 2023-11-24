@@ -58,12 +58,19 @@
         </div>
         <div class="card-body m-3">
             <div class="row">
-                <input type="text" class="form-control col" placeholder="ФИО клиента"/>
-                <input type="text" class="form-control col" placeholder="Номер клиента" />
+                <input type="text" class="form-control col" placeholder="ФИО клиента" name="clientName"/>
+                <input type="text" class="form-control col" placeholder="Номер клиента" name="clientNumber"/>
             </div>
             <div class="row">
                 <select name="car" asp-items="Model.Cars" class="form-control col"></select>
+                <select name="type" asp-items="Model.OrderTypes" class="form-control col"></select>
             </div>
+            <div class="row">
+                <input type="text" class="form-control col" placeholder="Адрес отправки" name="adresFrom"/>
+                <input type="text" class="form-control col" placeholder="Адрес назначения" name="adresTo"/>
+                <input type="number" class="form-control col" placeholder="Стоимость" name="price"/>
+            </div>
+            <button class="btn btn-primary" type="submit" onclick="checkInputData()">Добавить заказ</button>
         </div>
     </div>
 </div>

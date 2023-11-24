@@ -3,6 +3,9 @@ using Microsoft.EntityFrameworkCore;
 using Taxopark.Models;
 using Taxopark.ViewModels;
 using Microsoft.AspNetCore.Mvc.Rendering;
+using System.Web;
+using Microsoft.AspNetCore.Mvc.RazorPages;
+using AspNetCore;
 
 namespace Taxopark.Controllers
 {
@@ -30,6 +33,18 @@ namespace Taxopark.Controllers
                 Cars = new SelectList( _context.Transports.ToList(), "Id","Mark"),
             };
             return View(OVM);
+        }
+        //https://professorweb.ru/my/ASP_NET/sites/level5/5_4.php
+        //ajax
+        [HttpPost]
+        public void Index(string clientName, string clientNumber, Transport car, OrderType type, string adresFrom, string adresTo, double price)
+        {
+            if (!String.IsNullOrEmpty(clientName) && !String.IsNullOrEmpty(clientNumber) && !String.IsNullOrEmpty(adresFrom) && !String.IsNullOrEmpty(adresTo) && price > 0)
+            {
+
+            }
+            else;
+                
         }
     }
 }
